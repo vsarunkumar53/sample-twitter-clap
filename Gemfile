@@ -5,13 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
 
-group :production do
-	gem 'pg', '~> 0.18'
-end
+gem 'pg', '~> 0.18'
 
-group :development do
-	gem 'pg', '~> 0.18'
-end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
