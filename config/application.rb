@@ -14,3 +14,5 @@ module Tweet
     config.active_job.queue_adapter = :delayed_job
   end
 end
+
+config.assets.initialize_on_precompile = false
