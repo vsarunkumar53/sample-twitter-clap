@@ -1,0 +1,20 @@
+
+<div class="col-lg-4 col-lg-offset-4">
+
+	<%= form_for :tweet, :url => {:controller => 'send_tweet', :action => 'create'}, html: {id: 'tweet-form', class: 'form-horizontal'}, method: :post do |f| %>
+
+			<div class="form-group">
+        <%= f.label :message %>        
+        <%= f.text_field :message, class: 'form-control', placeholder: 'message'%>     
+      </div>
+
+	    <%= f.submit "Send Tweet", class: 'btn btn-primary' %>
+	    
+	  <% end %>
+</div>
+
+
+</br>
+</br>
+</br>
+

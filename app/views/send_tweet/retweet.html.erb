@@ -1,0 +1,14 @@
+
+<div class="col-lg-4 col-lg-offset-4">
+
+	<%= form_for :retweet, :url => {:controller => 'send_tweet', :action => 'retweeter_msg'}, html: {id: 'retweet-form', class: 'form-horizontal'}, method: :post do |f| %>
+
+			<div class="form-group">
+        <%= f.label :id %>
+    		<%= f.collection_select :id, @messages, :id, :message %> 
+      </div>		
+
+	    <%= f.submit "Send Retweet", class: 'btn btn-primary' %>
+	    
+	  <% end %>
+</div>

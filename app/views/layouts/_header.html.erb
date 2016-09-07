@@ -1,0 +1,52 @@
+ <header>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+              <a href="/" class="navbar-brand">Twitter Clap</a>               
+            </div>
+            <div class="page_nav">
+              <ul class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                
+                <div class="pull-right">
+                  <div class="item dropdown dropdown-menu-div avatar-img">
+                    <a href="#" class="dropdown-toggle" data-toggle = "dropdown" class = "navbar-brand">
+                      <img src="<%=asset_url('avatar.jpg')%>" width="30px" height="30px" >
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li class="dropdown-header">
+                        <%if user_signed_in? %>
+                          <%= current_user.name %>
+                        <%end%>
+                      </li>
+                      <li class="divider"></li>
+                      <li class="link">
+                        <a href="#">
+                          Profile
+                        </a>
+                      </li>
+                      <li class="divider"></li>
+                      <li class="link">
+                        <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "active" %>
+                      </li>
+                    </ul>
+                  </div>  
+                </div>
+
+              <div class="pull-right" style="margin:10px 40px 0px 0px">
+                <h5  style="color:#006666"><%= link_to "Retweet", { :controller => "send_tweet", :action => "retweet"} %></h5>
+              </div>
+
+              <div class="pull-right" style="margin:10px 40px 0px 0px">
+                <h5  style="color:#006666"><%= link_to "Send a Tweet", send_tweet_new_path %></h5>
+              </div>
+
+                <% else %>    
+                  <%= link_to "Sign In", new_user_session_path, :class => "navbar-brand" %>
+                  <%= link_to "Sign Up", new_user_registration_path, :class => "navbar-brand" %>
+                  <%= link_to "Sign Up with twitter", user_twitter_omniauth_authorize_path, :class => "navbar-brand" %>
+
+                <% end %>
+              </ul>
+            </div>
+        </nav>
+      </header>

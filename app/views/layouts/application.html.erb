@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter-clap</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="col-lg-12">
+        <%= render partial: 'layouts/header' %> 
+      </div>
+
+      <div class="main col-lg-12 myHalfCol">
+        <div class="col-lg-8 twitter-clap">
+          
+
+            <div class="col-lg-12">
+              <span class="alert alert-sucess"> <%= notice %> </span>
+              <span class="alert alert-default"> <%= alert %> </span>
+            </div>
+
+            <%= yield %>
+           
+
+        </div>
+
+        <div class="col-lg-1">
+        </div>
+
+        <div class="col-lg-3 sidebar">
+          <%= render partial: 'layouts/sidebar' %> 
+        </div>
+      </div>
+
+
+
+
+
+       
+
+    </div>
+  </body>
+</html>
